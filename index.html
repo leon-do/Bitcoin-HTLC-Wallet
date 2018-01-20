@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1> BTC HTLC Wallet </h1>
+	<hr>
+
+	<form action="/createTransaction" method="post">
+		<h4> Create Transaction </h4>
+		privateKeyWIF: <input type="text" name="privateKeyWIF" value="cN5R8xvMxB9QTGTVHh26BDZaBP1Zt1BsAmhY4CPo7yWZwSvyLuSN"><br>
+		outputAmount: <input type="number" name="outputAmount" value="22222"><br>
+		key: <input type="text" name="key" value="password"><br>
+		toAddress: <input type="text" name="toAddress" value="mo8cgpgt8VT7ToYFS3Ubq9KHAujDdSC2AC"><br>
+		timeLock: <input type="number" name="timeLock" value="1513412288"><br>
+
+		<h4> Metadata </h4>
+		<input type="radio" name="metadata" value="ETH" checked="checked">ETH<br>
+		address: <input type="text" name="metadata" value="0xc70103eddcA6cDf02952365bFbcf9A4A76Cd2066"><br>
+		amount: <input type="number" name="metadata" value="0.5"><br>
+
+		<br>
+
+		<input type="submit" value="Submit">
+	</form>
+
+
+
+
+	<br><br><hr><br><br>
+
+
+
+
+	<form action="/spend" method="post">
+		<h4> Spend </h4>
+		privateKeyWIF: <input type="text" name="privateKeyWIF" value="cUMox8ZpejP4KuKphz19aheKPqa4AEycGBvmmnEaoU7mtim4Lg7x"><br>
+		transactionNumber: <input type="text" name="transactionNumber" value="89025b657558ac1d5d6d8de43f6daa0184e02179e1b501dc4c55c9f071776e92"><br>
+		key: <input type="text" name="key" value="password"><br>
+		timeLock: <input type="text" name="timeLock" value="1513412288"><br>
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+
+
+
+
+	<br><br><hr><br><br>
+
+
+
+
+	<form action="/redeem" method="post">
+		<h4> Redeem </h4>
+		privateKeyWIF: <input type="text" name="privateKeyWIF" value="cN5R8xvMxB9QTGTVHh26BDZaBP1Zt1BsAmhY4CPo7yWZwSvyLuSN"><br>
+		transactionNumber: <input type="text" name="transactionNumber" placeholder="b9895477f91840fe754b64a55e748b5b78a67db82de5821d1bb539c33596e52b"><br>
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+
+</body>
+</html>
