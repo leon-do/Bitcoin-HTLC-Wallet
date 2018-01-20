@@ -27,7 +27,7 @@ app.post('/redeem', async (req, res) => {
 
 app.post('/spend', async (req, res) => {
     const data = req.body
-    const transaction = await spend.createTransaction(data.privateKeyWIF, data.transactionNumber, data.key, data.timeLock)
+    const transaction = await spend.createTransaction(data.privateKeyWIF, data.transactionNumber, data.key)
     res.send(transaction)
 })
 

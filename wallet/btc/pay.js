@@ -84,7 +84,7 @@ module.exports ={
             )
             // .to(scriptAddress, outputAmount - 1000)
             .change(fromAddress)
-            .addData('ETH_0x1234_0.5') // ETH_0x1234_0.5
+            .addData(metadata) // ETH_0x1234_0.5
             .sign(privateKey)
 
         console.log( '\n\nnewTransaction =', require('util').inspect(newTransaction.toObject(), false, null) )

@@ -33,7 +33,7 @@ module.exports = {
             satoshis: inputAmount,
         })
             .to(fromAddress, inputAmount - 1000) // send back to the original address for ease of testing only, the 1000 is the fee
-            .lockUntilDate(1513412288); // CLTV requires the transaction nLockTime to be >= the stack argument in the redeem script
+            .lockUntilDate(Math.floor(Date.now() / 1001)); // CLTV requires the transaction nLockTime to be >= the stack argument in the redeem script
 
 
         refundTransaction.inputs[0].sequenceNumber = 0; // the CLTV opcode requires that the input's sequence number not be finalized

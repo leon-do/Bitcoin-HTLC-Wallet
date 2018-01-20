@@ -12,6 +12,7 @@ module.exports = {
 
         // convert priv key to address
         const fromAddress = privateKey.toAddress().toString()
+        console.log(fromAddress)
 
         // get utxo data to add to new transaction
         const utxoData = await getUtxoData(transactionNumber)
@@ -38,8 +39,7 @@ module.exports = {
             satoshis: inputAmount,
         })
             .to(fromAddress, inputAmount - 1000) // or Copay: mqsscUaTAy3pjwgg7LVnQWr2dFCKphctM2
-            .lockUntilDate(1513412288); // CLTV requires the transaction nLockTime to be >= the stack argument in the redeem script
-
+            .lockUntilDate(Math.floor(Date.now() / 1001)); // CLTV requires the transaction nLockTime to be >= the stack argument in the redeem script
 
         refundTransaction.inputs[0].sequenceNumber = 0; // the CLTV opcode requires that the input's sequence number not be finalized
 
